@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="publisher" content="blankdots.com" />
+    <meta name="author" content="Stefan Negru" />
+    <meta name="keywords" content="personas, template" />
+    <meta name="description" content="Personas Template with microdata" />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Personas Template</title>
+</head>
+
+<style>
+    img {
+        border: none;
+    }
+
+    ul {
+        margin: 0;
+        list-style-type: none;
+    }
+
+    fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: #3CA2A2;
+    }
+
+    a:hover {
+        color: #215A6D;
+    }
+
+    legend {
+        display: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        background: #fff;
+    }
+
+    header {
+        padding: 5px;
+        background-color: #2D2D29;
+        overflow: hidden;
+    }
+
+    header h1 {
+        margin: 5px 10px 0px 10px;
+        padding: 0;
+        color: #DFECE6;
+        font-size: 1.8em;
+        float: left;
+    }
+
+    header #logo {
+        float: right;
+        margin: 0;
+    }
+
+    article.persona {
+        background-color: #fff;
+        border: solid 1px #493736;
+        float: left;
+        margin: 5px 10px;
+        width: 48%;
+    }
+
+    .personaInfo figure {
+        margin: 0;
+        padding: 0;
+    }
+
+    .personaInfo {
+        border-bottom: solid 1px #493736;
+        padding: 5px;
+        overflow: hidden;
+    }
+
+    .personaInfo img {
+        float: left;
+    }
+
+    .personaInfo .personaBackground {
+        float: right;
+        width: 73%;
+    }
+
+    .personaInfo h3,
+    .personaInfo .personaBackground h4,
+    .personaInfo .personaBackground h5,
+    .personaDetails h4,
+    .personaDetails h5,
+    .personaScenarios h5,
+    .interaction-types h5,
+    .otherDetails h5 {
+        margin: 0 0 5px;
+        padding: 5px;
+        background-color: #2D2D29;
+        color: #DFECE6;
+    }
+
+    .interaction-types {
+        margin-top: 50px;
+        font-size: 25px;
+    }
+
+    .personaInfo .personaBackground ul,
+    .personaDetails ul,
+    .personaScenarios ul,
+    .otherDetails ul {
+        margin: 0;
+        padding: 0 5px;
+    }
+
+    .personaInfo p,
+    .personaDetails p,
+    .personaScenarios p,
+    .otherDetails p {
+        margin: 2px;
+        padding: 0;
+    }
+
+    .personaDetails ul li {
+        list-style-type: square;
+        margin: 0 0 0 15px;
+    }
+
+    .personaDetails {
+        border-bottom: solid 1px #493736;
+        overflow: hidden;
+        padding: 5px;
+    }
+
+    .personaDetails .detailsLeft h5 {
+        padding: 5px 5px 5px 10px;
+    }
+
+    .personaDetails .detailsLeft {
+        width: 38%;
+        float: left;
+        margin-right: 5px;
+    }
+
+
+    .personaDetails .detailsRight {
+        width: 61%;
+        float: right;
+    }
+
+    .personaScenarios,
+    .otherDetails {
+        clear: both;
+        padding: 5px;
+        overflow: hidden;
+    }
+
+    .personaScenarios {
+        border-bottom: solid 1px #493736;
+    }
+
+    footer {
+        clear: both;
+        margin: 5px 10px;
+        padding: 0;
+    }
+    
+    @media screen and (max-width:1200px) {
+        .personaInfo .personaBackground {
+            float: left;
+            width: 100%;
+            margin-top: 5px;
+        }
+    }
+
+    @media screen and (max-width:1120px) {
+
+        .personaDetails .detailsLeft,
+        .personaDetails .detailsRight {
+            width: 100%;
+            float: left;
+        }
+
+        article.persona {
+            width: 98%;
+            margin: 5px 2px;
+        }
+    }
+
+    @media print {
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            background: #fff;
+        }
+
+        header {
+            margin: 0;
+        }
+
+        header #logo {
+            display: none;
+        }
+
+        article.persona {
+            width: 99%;
+            margin: 10px 2px;
+        }
+
+        .personaInfo h3,
+        .personaInfo .personaBackground h4,
+        .personaInfo .personaBackground h5,
+        .personaDetails h4,
+        .personaDetails h5,
+        .personaScenarios h5,
+        .otherDetails h5 {
+            margin: 0 0 5px;
+            padding: 5px;
+            background-color: #ccc;
+            color: #111;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+        .personaDetails .detailsLeft {
+            width: 38%;
+            float: left;
+            margin-right: 5px;
+        }
+
+        .personaDetails .detailsRight {
+            width: 61%;
+            float: right;
+        }
+
+        .personaScenarios {
+            border-bottom: solid 1px #493736;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <h1>Personas Template</h1>
+        <span id="logo"><a href="http://www.w3.org/html/logo/">
+                <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="83" height="32"
+                    alt="HTML5 Powered with CSS3 / Styling, and Semantics"
+                    title="HTML5 Powered with CSS3 / Styling, and Semantics">
+            </a></span>
+
+    </header>
+    <section>
+        <h1 class="hidden">Personas Section (minimum 4 personas recommended)</h1>
+        <article itemscope itemtype="http://schema.org/Person" class="persona">
+            <div class="personaInfo">
+                <h3>Type: Primary</h3>
+                <figure>
+                    <img itemprop="image"
+                        src="data:image/jpeg;base64,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"
+                        alt="persona image" />
+                </figure>
+                <div class="personaBackground">
+                    <h4>Name: <span itemprop="givenName"> Emily</span> <span itemprop="familyName">Thompson</span>
+                    </h4>
+                    <h5>Background</h5>
+                    <ul>
+                        <li><strong>Date of Birth:</strong> <time itemprop="birthDate"
+                                datetime="1990-10-23">10/23/1990</time></li>
+                        <li><strong>Gender:</strong> <span itemprop="gender">Female</span></li>
+                        <li itemprop="location" itemscope itemtype="http://schema.org/Place"><strong>Location:</strong>
+                            <span itemprop="name">London, UK</span>
+                        </li>
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><strong>Work
+                                place:</strong> <span itemprop="name">Tour Guide</span>
+                    </ul>
+                </div>
+            </div>
+            <div class="personaDetails">
+                <div class="detailsLeft">
+                    <div class="leftGroup">
+                        <h5>Main Points</h5>
+                        She is an experienced tour guide, tech-savvy and open to using digital tools, responsible for managing itinerary and coordinating with group members.
+                    </div>
+                    <div class="leftGroup">
+                        <h5>Goals</h5>
+                        <p>Goals are the reasons users perform tasks, not the tasks.</p>
+                        <ul>
+                            <li>Practical Goals: Coordinate with group members and provide them with updated schedules and information;Enable seamless communication among group members for real-time updates and coordination.</li>
+                            <li>Personal Goals: Provide a sense of community and engagement among group members through group and individual chats;Facilitate a memorable and enjoyable trip by offering timers and alarms for each location.</li>
+                            <li>Business Goals: Establish a reputation for excellent tour management and customer satisfaction;Increase customer loyalty and repeat business by delivering a seamless and well-organized trip experience.</li>
+                        </ul>
+                    </div>
+                    <div class="leftGroup">
+                        <h5>Frustrations and Pain Points</h5>
+                        <p>Some of the difficulties the user has with the product.</p>
+                        <ul>
+                            <li>Coordinating with group members in real-time: The Tourist Group Leader may face challenges in coordinating with group members on the go, especially when changes or updates need to be communicated quickly. This can lead to delays, miscommunication, and confusion within the group.
+                            </li>
+                            <li>Managing last-minute changes to the itinerary: Dealing with unexpected changes, such as weather conditions or unforeseen circumstances, can be stressful for the Tourist Group Leader. Adjusting schedules, rearranging activities, and ensuring everyone is informed and on the same page can be challenging.</li>
+                            <li>Ensuring everyone has access to updated information: Keeping everyone in the group up to date with the latest schedules, directions, and information about points of interest can be difficult. Ensuring that all group members have access to and receive the updated information in a timely manner can be a pain point.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div itemprop="description" class="detailsRight">
+                    <h5>Detailed Description</h5>
+                    <p>Emily is an experienced tour guide who is responsible for leading a group of tourists on a trip. She needs a user-friendly interface that allows her to easily manage the itinerary, communicate with group members, and provide updated information.</p>
+                    <h5>References</h5>
+                    <ul>
+                        <li>Fluid <a href="http://wiki.fluidproject.org/display/fluid/Personas">Personas</a>;</li>
+                        <li>An introduction to personas and <a href="http://www.steptwo.com.au/papers/kmc_personas">how
+                                to create them</a>;</li>
+                        <li itemscope itemtype="http://schema.org/Book"><span itemprop="name"><a
+                                    href="http://www.amazon.com/Persona-Lifecycle-Throughout-Interactive-Technologies/dp/0125662513/ref=pd_bbs_sr_1?ie=UTF8&amp;s=books&amp;qid=1240423894&amp;sr=8-1"
+                                    class="external-link" rel="nofollow">The Persona Lifecycle, Keeping People in Mind
+                                    Throughout Product Design</a></span>, <span itemprop="author">John Pruitt &amp;
+                                Tamara Adlin</span>;</li>
+                        <li>This version of Personas Template includes microdata markup using <a
+                                href="schema.org/">schema.org Schemas</a>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="personaScenarios">
+                <h5>Scenarios</h5>
+                <h4>Scenario 1: Notifying the group about a change in the schedule due to weather conditions.</h4>
+
+
+                    <p>Emily, the Tourist Group Leader, receives information about an upcoming storm that will affect the planned outdoor activity.
+                    She needs to quickly notify all the group members about the change in the schedule to ensure their safety and make alternative arrangements.
+                    Emily opens the mobile application, navigates to the group chat feature, and sends a message to all the group members, informing them about the change in the itinerary and providing the new activity details and meeting location.
+                    The group members receive the notification on their devices, acknowledging the change and confirming their understanding.
+                </p> 
+                
+                <h4>
+                    Scenario 2: Facilitating individual chats to address specific questions or concerns.
+                </h4>
+                <p>
+                    Emily, the Tourist Group Leader, notices that some group members have individual questions or concerns regarding the upcoming visit to a historical site.
+She opens the mobile application and accesses the individual chat feature, which allows her to have private conversations with each group member.
+Emily initiates individual chats with the concerned group members to address their specific questions, provide additional information, or offer reassurance.
+She engages in personalized conversations, addressing their concerns and providing guidance on specific aspects of the visit, such as accessibility, parking, or recommended time slots.
+Emily ensures that all group members feel heard, supported, and well-informed, fostering a sense of confidence and anticipation for the upcoming visit.
+The group members appreciate the opportunity to have their individual questions addressed, enhancing their overall experience and easing any uncertainties they may have had.
+                </p>
+            </div>
+
+            
+        </article>
+        <article itemscope itemtype="http://schema.org/Person" class="persona">
+            <div class="personaInfo">
+                <h3>Type: Secondary</h3>
+                <figure>
+                    <img itemprop="image"
+                        src="data:image/jpeg;base64,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"
+                        alt="persona image" />
+                </figure>
+                <div class="personaBackground">
+                    <h4>Name: <span itemprop="givenName">Sarah</span> <span itemprop="familyName">Johnson</span>
+                    </h4>
+                    <h5>Background</h5>
+                    <ul>
+                        <li><strong>Date of Birth:</strong> <time itemprop="birthDate"
+                                datetime="1990-10-23">10/23/1990</time></li>
+                        <li><strong>Gender:</strong> <span itemprop="gender">Female</span></li>
+                        <li itemprop="location" itemscope itemtype="http://schema.org/Place"><strong>Location:</strong>
+                            <span itemprop="name">Iasi, Romania</span>
+                        </li>
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><strong>Work
+                                place:</strong> <span itemprop="name">Amazon</span>, <span itemprop="jobTitle">Marketing
+                                Manager</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="personaDetails">
+                <div class="detailsLeft">
+                    <div class="leftGroup">
+                        <h5>Main Points</h5>
+                        Enjoys traveling with family and friends during vacations,
+                        seeks user-friendly interfaces and quick access to information and
+                        values reminders and alerts for different locations.
+                    </div>
+                    <div class="leftGroup">
+                        <h5>Goals</h5>
+                        <p>Goals are the reasons users perform tasks, not the tasks.</p>
+                        <ul>
+                            <li>Practical Goals: Access relevant information: Sarah expects the app to provide her with
+                                accurate and up-to-date information about various points of interest, such as tourist
+                                attractions, restaurants, and hotels, to help her make informed decisions during the
+                                trip.</li>
+                            <li>Personal Goals: Enjoy quality time with family and friends: Sarah's personal goal is to
+                                have a memorable and enjoyable time with her loved ones during the trip. She wants the
+                                app to facilitate smooth coordination and minimize any potential stress related to
+                                organizing group activities.</li>
+                            <li>Business Goals: Increase efficiency in trip planning: As a marketing manager, Sarah
+                                understands the importance of efficient time management. She expects the app to
+                                streamline the trip planning process, allowing her to save time and focus on other
+                                aspects of her professional life.</li>
+                        </ul>
+                    </div>
+                    <div class="leftGroup">
+                        <h5>Frustrations and Pain Points</h5>
+                        <p>Some of the difficulties the user has with the product.</p>
+                        <ul>
+                            <li>Sarah might be frustrated if the app has a cluttered or disorganized layout, making it
+                                difficult for her to find and access the necessary features.</li>
+                            <li>Dislikes relevant to the research: If the search feature within the app is ineffective
+                                or fails to provide accurate and relevant results for points of interest or activities,
+                                Sarah may feel frustrated and find it challenging to discover suitable options.</li>
+                            <li>Unreliability of the product:If the app is slow, lags, or has a sluggish response time,
+                                Sarah may become impatient and find it challenging to complete tasks efficiently.</li>
+                            <li>Difficulties in completing tasks: If the app fails to provide clear instructions or a
+                                seamless onboarding process, Sarah might feel overwhelmed and have difficulty
+                                understanding how to use the app effectively.</li>
+                            <li>Problems with the product: Frequent crashes, freezes, or other technical issues can
+                                frustrate Sarah, disrupt her workflow, and potentially lead to data loss or
+                                inconvenience.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div itemprop="description" class="detailsRight">
+                    <h5>Detailed Description</h5>
+                    <p>Sarah enjoys traveling with her family and friends during vacations. She prefers a user-friendly
+                        interface that allows her to quickly access relevant information and communicate with her travel
+                        companions. She appreciates reminders and alerts for various locations and finds value in having
+                        a dedicated app for managing group activities.</p>
+                    <h5>References</h5>
+                    <ul>
+                        <li>Fluid <a href="http://wiki.fluidproject.org/display/fluid/Personas">Personas</a>;</li>
+                        <li>An introduction to personas and <a href="http://www.steptwo.com.au/papers/kmc_personas">how
+                                to create them</a>;</li>
+                        <li itemscope itemtype="http://schema.org/Book"><span itemprop="name"><a
+                                    href="http://www.amazon.com/Persona-Lifecycle-Throughout-Interactive-Technologies/dp/0125662513/ref=pd_bbs_sr_1?ie=UTF8&amp;s=books&amp;qid=1240423894&amp;sr=8-1"
+                                    class="external-link" rel="nofollow">The Persona Lifecycle, Keeping People in Mind
+                                    Throughout Product Design</a></span>, <span itemprop="author">John Pruitt &amp;
+                                Tamara Adlin</span>;</li>
+                        <li>This version of Personas Template includes microdata markup using <a
+                                href="schema.org/">schema.org Schemas</a>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="personaScenarios">
+                <h5>Scenarios</h5>
+                <h4>Sarah wants to send a group chat message to inform everyone about a change in meeting location.
+                    She needs to set an alarm to remind herself and her group about the start time of a guided tour.
+                </h4>
+                <h4>
+                    Sarah is excited about planning a family vacation to a popular tourist destination. She
+                    wants to make sure that the trip is well-organized and enjoyable for everyone in her family.
+                    Sarah opens the app and starts exploring various points of interest in the destination. She uses the
+                    search feature to find popular attractions, theme parks, museums, and restaurants that are suitable
+                    for her family. The app provides detailed descriptions, reviews, and ratings for each location,
+                    helping Sarah make informed decisions.
+                </h4>
+                <h4>
+                    Sarah opens the app and selects the AR mode from the menu. The app accesses the device's camera and
+                    overlays a digital interface on the real-world view, ready to recognize and provide details about
+                    points of interest.
+                </h4>
+            </div>
+        </article>
+        <article itemscope itemtype="http://schema.org/Person" class="persona">
+            <div class="personaInfo">
+                <h3>Type: Secondary</h3>
+                <figure>
+                    <img itemprop="image"
+                        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAHBhMSEBIPDxUQEQ8QFRIODg8QEBAVFREYFhURFRYYHSggGRolHRUTITEiKCkrLi4uFx8zODMsNygtLi0BCgoKDQ0NDw0NDisZFRkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAaAAEAAwEBAQAAAAAAAAAAAAAAAwQFAQIH/8QANBABAAEDAgIHBQgDAQAAAAAAAAECAxEEITFxEhNBUWGBsQUicpHwIzIzNFKhwdFC4fEk/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD6oAqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIrmopt8Z37o3kErkzFPGYjnLOvauqvh7seHH5q87yDYiuJ4TE8ph6Yr3TdqpjaqY85BrjNt6yqnj73Nds36b0bce6eIJQAAAAAAAAAAAAAAAAAAAAVdfd6NGI/y9AR6rVZ2pnnP9KYKAAAADtNU0zmNsOANTTXuuo8Y4/2mZWmudVeiezhLVQAAAAAAAAAAAAAAAAAAGXq6+nfnw2+X1LTmejGe7djcQAFAAAAAABrWKulZpnwhktXS/l6eSCUAAAAAAAAAAAAAAAAAEd/azV8M+jJa1/8Cr4Z9GSAAoAAAfX18gAAGno5/wDNHn6yzGnovy0efqgnAAAAAAAAAAAAAAAAABS196aZ6MbZic+PgoQu+0qfepnmp43AyZMGFDJEmDAOTwJnETydwYAmcGcGDAC5obs9Po9mJ8lPCz7Pj7flEg0gEAAAAAAAAAAAAAAAAFbX09Kxnun/AEzmxVTFdMxPbszdTY6iY3zE5BCAoAAAAAAL3s6n3ZnyVdPZ665jhtlp2rcWqMQg9gAAAAAAAAAAAAAAAAAINXb6yxPhunAYon1djqq8xwnh4eCBQAAAABJp7PXXMdnbILmgt9G1n9XpC05EYh1AAAAAAAAAAAAAAAAAAAABBrYzpp8vVmNLXVY08x349WaAAoAAND2fH2M/F/EM9f8AZ9X2cx45/ZBbAAAAAAAAAAAAAAAAAABFc1FNvjPlG8glVNZqJtziNsxnKO5rpn7sY8Z3lVqqmuczMzzAmZqnffm4CgAAAAROABc0moqquRTO+c79vBeYsT0Z225LVvW1U8fe/aUGgILeqouduPCrZOAAAAAAAAAAAPNdUUU5nhDOv6mq7PdHdH8gvXL9NvjMco3lWua79Mec/wBKYCS5fqucZnlwhGCgAAAAAAAAAAAA927tVvhMx6PAC3b10x96M8tlm3qaK+3HhOzLEG0MqzqKrU7bx3TwaVq5F2jMf88AewAAAAAUPaFzNcU9288/r1VEmpnOoq54+WyMABQAAAAAAAAAAAAAAAAAAWNFc6F7HZVt59iu7RPRrie6YkGyAgAAAAyL341XxT6vAKAAAAAAAAAAAAAAAAAAAAAANoBAAB//2Q=="
+                        alt="persona image" />
+                </figure>
+                <div class="personaBackground">
+                    <h4>Name: <span itemprop="givenName">John </span> <span itemprop="familyName">Anderson</span>
+                    </h4>
+                    <h5>Background</h5>
+                    <ul>
+                        <li><strong>Date of Birth:</strong> <time itemprop="birthDate"
+                                datetime="1960-10-23">10/23/1990</time></li>
+                        <li><strong>Gender:</strong> <span itemprop="gender">Male</span></li>
+                        <li itemprop="location" itemscope itemtype="http://schema.org/Place"><strong>Location:</strong>
+                            <span itemprop="name">Iasi, Romania</span>
+                        </li>
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><strong>Work
+                                place:</strong> <span itemprop="name">Retired</span>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="personaDetails">
+                <div class="detailsLeft">
+                    <div class="leftGroup">
+                        <h5>Main Points</h5>
+                        <p>Elderly individual who enjoys traveling and exploring new destinations,
+                            prefers simplicity and ease of use in technology and
+                            appreciates clear instructions and intuitive interfaces</p>
+                    </div>
+                    <div class="leftGroup">
+                        <h5>Goals</h5>
+                        <p>Goals are the reasons users perform tasks, not the tasks.</p>
+                        <ul>
+                            <li>Practical Goals: John appreciates straightforward instructions that are easy to
+                                understand and follow, enabling him to make the most of the app's features without
+                                feeling overwhelmed or confused.</li>
+                            <li>Personal Goals: ohn's personal goal is to have enjoyable and enriching travel
+                                experiences, discovering new destinations and immersing himself in the local culture and
+                                attractions.</li>
+                            <li>Business Goals:John is retired</li>
+                        </ul>
+                    </div>
+                    <div class="leftGroup">
+                        <h5>Frustrations and Pain Points</h5>
+                        <p>Some of the difficulties the user has with the product.</p>
+                        <ul>
+                            <li>UI, Interaction, User Experience: If the app has a cluttered or confusing user
+                                interface, John may feel frustrated and find it challenging to navigate through the
+                                features or access the desired information.</li>
+                            <li>If the app does not consider John's preference for larger font sizes or does not offer
+                                sufficient contrast, it may strain his eyes and hinder his ability to read information
+                                clearly.</li>
+                            <li>Difficulties in completing tasks: If the app's advanced features, such as augmented
+                                reality or audio guides, are overly complex or not user-friendly, John may struggle to
+                                use them effectively, leading to frustration or avoidance of those features.</li>
+                            <li>If John encounters issues or requires assistance while using the app, he may find it
+                                frustrating if there is no dedicated support or help section specifically tailored to
+                                users like him, causing him to feel stranded or overwhelmed.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div itemprop="description" class="detailsRight">
+                    <h5>Detailed Description</h5>
+                    <p>John is a retired individual who loves traveling and wants a mobile app that is user-friendly,
+                        provides clear instructions, and offers accessibility options. He seeks audio guides and
+                        augmented reality features to enhance his understanding of points of interest.</p>
+                    <h5>References</h5>
+                    <ul>
+                        <li>Fluid <a href="http://wiki.fluidproject.org/display/fluid/Personas">Personas</a>;</li>
+                        <li>An introduction to personas and <a href="http://www.steptwo.com.au/papers/kmc_personas">how
+                                to create them</a>;</li>
+                        <li itemscope itemtype="http://schema.org/Book"><span itemprop="name"><a
+                                    href="http://www.amazon.com/Persona-Lifecycle-Throughout-Interactive-Technologies/dp/0125662513/ref=pd_bbs_sr_1?ie=UTF8&amp;s=books&amp;qid=1240423894&amp;sr=8-1"
+                                    class="external-link" rel="nofollow">The Persona Lifecycle, Keeping People in Mind
+                                    Throughout Product Design</a></span>, <span itemprop="author">John Pruitt &amp;
+                                Tamara Adlin</span>;</li>
+                        <li>This version of Personas Template includes microdata markup using <a
+                                href="schema.org/">schema.org Schemas</a>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="personaScenarios">
+                <h5>Scenarios</h5>
+                <h4>When John wants to move to another point of interest, he uses the app's intuitive map and navigation
+                    feature. The app provides clear directions, large visual cues, and simple turn-by-turn instructions.
+                    Additionally, the app suggests nearby restaurants or attractions based on his current location and
+                    preferences, helping him discover hidden gems in the area.</h4>
+                <h4>
+                    As John approaches a famous landmark, he activates the app's augmented reality (AR) feature. Holding
+                    up his phone, he sees an overlay of digital information about the landmark, such as historical
+                    facts, architectural details, and important highlights. The app simplifies the AR experience,
+                    providing a user-friendly interface that guides John through the information seamlessly.
+                </h4>
+            </div>
+        </article>
+
+        <article itemscope itemtype="http://schema.org/Person" class="persona">
+            <div class="personaInfo">
+                <h3>Type: Secondary</h3>
+                <figure>
+                    <img itemprop="image"
+                        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAHBhMSEBIPDxUQEQ8QFRIODg8QEBAVFREYFhURFRYYHSggGRolHRUTITEiKCkrLi4uFx8zODMsNygtLi0BCgoKDQ0NDw0NDisZFRkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAaAAEAAwEBAQAAAAAAAAAAAAAAAwQFAQIH/8QANBABAAEDAgIHBQgDAQAAAAAAAAECAxEEITFxEhNBUWGBsQUicpHwIzIzNFKhwdFC4fEk/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD6oAqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIrmopt8Z37o3kErkzFPGYjnLOvauqvh7seHH5q87yDYiuJ4TE8ph6Yr3TdqpjaqY85BrjNt6yqnj73Nds36b0bce6eIJQAAAAAAAAAAAAAAAAAAAAVdfd6NGI/y9AR6rVZ2pnnP9KYKAAAADtNU0zmNsOANTTXuuo8Y4/2mZWmudVeiezhLVQAAAAAAAAAAAAAAAAAAGXq6+nfnw2+X1LTmejGe7djcQAFAAAAAABrWKulZpnwhktXS/l6eSCUAAAAAAAAAAAAAAAAAEd/azV8M+jJa1/8Cr4Z9GSAAoAAAfX18gAAGno5/wDNHn6yzGnovy0efqgnAAAAAAAAAAAAAAAAABS196aZ6MbZic+PgoQu+0qfepnmp43AyZMGFDJEmDAOTwJnETydwYAmcGcGDAC5obs9Po9mJ8lPCz7Pj7flEg0gEAAAAAAAAAAAAAAAAFbX09Kxnun/AEzmxVTFdMxPbszdTY6iY3zE5BCAoAAAAAAL3s6n3ZnyVdPZ665jhtlp2rcWqMQg9gAAAAAAAAAAAAAAAAAINXb6yxPhunAYon1djqq8xwnh4eCBQAAAABJp7PXXMdnbILmgt9G1n9XpC05EYh1AAAAAAAAAAAAAAAAAAAABBrYzpp8vVmNLXVY08x349WaAAoAAND2fH2M/F/EM9f8AZ9X2cx45/ZBbAAAAAAAAAAAAAAAAAABFc1FNvjPlG8glVNZqJtziNsxnKO5rpn7sY8Z3lVqqmuczMzzAmZqnffm4CgAAAAROABc0moqquRTO+c79vBeYsT0Z225LVvW1U8fe/aUGgILeqouduPCrZOAAAAAAAAAAAPNdUUU5nhDOv6mq7PdHdH8gvXL9NvjMco3lWua79Mec/wBKYCS5fqucZnlwhGCgAAAAAAAAAAAA927tVvhMx6PAC3b10x96M8tlm3qaK+3HhOzLEG0MqzqKrU7bx3TwaVq5F2jMf88AewAAAAAUPaFzNcU9288/r1VEmpnOoq54+WyMABQAAAAAAAAAAAAAAAAAAWNFc6F7HZVt59iu7RPRrie6YkGyAgAAAAyL341XxT6vAKAAAAAAAAAAAAAAAAAAAAAANoBAAB//2Q=="
+                        alt="persona image" />
+                </figure>
+                <div class="personaBackground">
+                    <h4>Name: <span itemprop="givenName">Alex</span> <span itemprop="familyName"> Rodriguez </span>
+                    </h4>
+                    <h5>Background</h5>
+                    <ul>
+                        <li><strong>Date of Birth:</strong> <time itemprop="birthDate"
+                                datetime="1960-10-23">10/23/1990</time></li>
+                        <li><strong>Gender:</strong> <span itemprop="gender">Male</span></li>
+                        <li itemprop="location" itemscope itemtype="http://schema.org/Place"><strong>Location:</strong>
+                            <span itemprop="name">Madrid, Spain</span>
+                        </li>
+                        <li itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"><strong>Work
+                                place:</strong> <span itemprop="name">Microsoft, Software Engineer</span>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="personaDetails">
+                <div class="detailsLeft">
+                    <div class="leftGroup">
+                        <h5>Main Points</h5>
+                        <p>The tourist is highly enthusiastic about utilizing technology to enhance their travel experience. They actively seek out innovative solutions and applications that can provide convenience, information, and immersive experiences during their trips. He values having access to comprehensive and up-to-date information about points of interest, including historical and cultural significance, practical details, and user reviews. They rely on digital resources to plan their itinerary and make informed decisions. He is particularly interested in augmented reality experiences that can bring points of interest to life. They appreciate the ability to overlay virtual information, interactive elements, and simulations on the real-world environment to enhance their understanding and enjoyment of the destination.The tourist embraces wearable technology, such as smartwatches, and expects seamless integration between the mobile application and their wearable device. They seek dedicated features and functionalities that can leverage the capabilities of their wearable device to provide added convenience and enhance their overall travel experience.</p>
+                    </div>
+                    <div class="leftGroup">
+                        <h5>Goals</h5>
+                        <p>Goals are the reasons users perform tasks, not the tasks.</p>
+                        <ul>
+                            <li>Practical Goals: Access detailed information and guides for points of interest to enhance the travel experience; Utilize augmented reality simulations when physical access to certain locations is not possible.</li>
+                            <li>Personal Goals: Explore destinations with a modern approach and leverage digital tools to enrich the journey. </li>
+                            <li>Business Goals:Attract technology enthusiast tourists by offering advanced features and innovative functionalities.</li>
+                        </ul>
+                    </div>
+                    <div class="leftGroup">
+                        <h5>Frustrations and Pain Points</h5>
+                        <p>Some of the difficulties the user has with the product.</p>
+                        <ul>
+                            <li>Lack of comprehensive and up-to-date information: The Tech-savvy Tourist may be frustrated when the application lacks comprehensive and accurate information about points of interest, leading to incomplete or outdated details. This can hinder their ability to plan their visit effectively and may result in missed opportunities.</li>
+                            <li>Limited availability of augmented reality experiences.</li>
+                            <li>Incompatibility with smartwatches or other wearable devices: If the app does not integrate well with smartwatches or other wearable devices, it can be frustrating for the tourist who wants to leverage the functionalities and benefits provided by their wearable technology. </li>
+                        </ul>
+                    </div>
+                </div>
+                <div itemprop="description" class="detailsRight">
+                    <h5>Detailed Description</h5>
+                    <p>Alex is a software engineer who loves exploring new places and wants to make the most of his trips. He seeks a mobile app that provides detailed information, augmented reality experiences, and seamless integration with his smartwatch.</p>
+                    <h5>References</h5>
+                    <ul>
+                        <li>Fluid <a href="http://wiki.fluidproject.org/display/fluid/Personas">Personas</a>;</li>
+                        <li>An introduction to personas and <a href="http://www.steptwo.com.au/papers/kmc_personas">how
+                                to create them</a>;</li>
+                        <li itemscope itemtype="http://schema.org/Book"><span itemprop="name"><a
+                                    href="http://www.amazon.com/Persona-Lifecycle-Throughout-Interactive-Technologies/dp/0125662513/ref=pd_bbs_sr_1?ie=UTF8&amp;s=books&amp;qid=1240423894&amp;sr=8-1"
+                                    class="external-link" rel="nofollow">The Persona Lifecycle, Keeping People in Mind
+                                    Throughout Product Design</a></span>, <span itemprop="author">John Pruitt &amp;
+                                Tamara Adlin</span>;</li>
+                        <li>This version of Personas Template includes microdata markup using <a
+                                href="schema.org/">schema.org Schemas</a>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="personaScenarios">
+                <h5>Scenarios</h5>
+                <h4>Scenario 1: Exploring a new city with augmented reality guidance.</h4>
+                <p>Alex, the Tech-savvy Tourist, arrives in a new city and wants to make the most of their visit to the historical landmarks.
+                    They open the mobile application and access the augmented reality (AR) feature, which overlays virtual information and interactive elements on the real-world environment through their device's camera.
+                    Alex selects a point of interest and activates the AR mode. As they point the device's camera towards the landmark, the application recognizes it and provides detailed historical information.</p>
+                <h4>
+                    Scenario 2: Syncing the application with a smartwatch 
+                </h4>
+                <p>Alex, the Tech-savvy Tourist, wears a smartwatch during their trip, and they want to leverage its capabilities for a seamless travel experience.With the application on their smartwatch, Alex can receive notifications and updates directly on their wrist, such as upcoming activities, changes in the itinerary, or reminders for specific points of interest.</p>
+            </div>
+        </article>
+
+    </section>
+
+
+    <footer id="footer">
+        <span id="license"><a href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License"
+                    style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a></span>
+    </footer>
+
+    <div class="interaction-types">
+        <h5>Interaction types/paradigms</h5>
+        <div style="display: flex; gap: 100px; padding: 25px;">
+            <div style="width: 350px;">
+                <h4>Traditional versus gestural+haptic</h4>
+                <h6>
+                    In the context of our app design, we have chosen to primarily utilize traditional
+                    interaction methods, such as buttons with describable icons, for specific operations. This approach
+                    provides
+                    users with clear visual cues and allows them to initiate actions by tapping on the relevant buttons.
+                </h6>
+                <div>
+                    <img src="./images/ss-tools-area.png" alt="">
+                </div>
+            </div>
+            <div style="width: 350px;">
+                <h6>
+                    But we also have gestural interactions that involve using touch gestures, such as swiping, mainly on
+                    the popular location areas where we have a scrollable to the right view. The cut image suggests the
+                    scrollable view.
+                </h6>
+                <img src="./images/ss-popular-poi.png" alt="">
+            </div>
+            <div style="width: 350px;">
+                <h4>Mixed Reality Interaction</h4>
+                <h6>
+                    By utilizing the camera functionality of the app to overlay digital information and descriptions on
+                    top of real-world POIs, we are creating a mixed reality experience for users. This feature allows
+                    users like Sarah and John to visually perceive their surroundings while receiving additional
+                    contextual information and guidance through the app.
+                </h6>
+                <img src="./images/ss-AR.png" alt="" height="300px">
+            </div>
+
+        </div>
+        <div style="width: 350px;padding: 25px;">
+            <h4>Conversational User Interface (CUI) versus Classical I/O</h4>
+            <h6>
+                We maintain classic inputs with a simple design. A good idea for conversational UI would be on the search bar.
+            </h6>
+            <img src="./images/ss-input.png" alt="">
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+</head>
+<style>
+    /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+    html {
+        font-family: sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%
+    }
+
+    body {
+        margin: 0
+    }
+
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    menu,
+    nav,
+    section,
+    summary {
+        display: block
+    }
+
+    audio,
+    canvas,
+    progress,
+    video {
+        display: inline-block;
+        vertical-align: baseline
+    }
+
+    audio:not([controls]) {
+        display: none;
+        height: 0
+    }
+
+    [hidden],
+    template {
+        display: none
+    }
+
+    a {
+        background-color: transparent
+    }
+
+    a:active,
+    a:hover {
+        outline: 0
+    }
+
+    abbr[title] {
+        border-bottom: 1px dotted
+    }
+
+    b,
+    strong {
+        font-weight: 700
+    }
+
+    dfn {
+        font-style: italic
+    }
+
+    h1 {
+        font-size: 2em;
+        margin: .67em 0
+    }
+
+    mark {
+        background: #ff0;
+        color: #000
+    }
+
+    small {
+        font-size: 80%
+    }
+
+    sub,
+    sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline
+    }
+
+    sup {
+        top: -.5em
+    }
+
+    sub {
+        bottom: -.25em
+    }
+
+    img {
+        border: 0
+    }
+
+    svg:not(:root) {
+        overflow: hidden
+    }
+
+    figure {
+        margin: 1em 40px
+    }
+
+    hr {
+        box-sizing: content-box;
+        height: 0
+    }
+
+    pre {
+        overflow: auto
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+        font-family: monospace;
+        font-size: 1em
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        color: inherit;
+        font: inherit;
+        margin: 0
+    }
+
+    button {
+        overflow: visible
+    }
+
+    button,
+    select {
+        text-transform: none
+    }
+
+    button,
+    html input[type=button],
+    input[type=reset],
+    input[type=submit] {
+        -webkit-appearance: button;
+        cursor: pointer
+    }
+
+    button[disabled],
+    html input[disabled] {
+        cursor: default
+    }
+
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+        border: 0;
+        padding: 0
+    }
+
+    input {
+        line-height: normal
+    }
+
+    input[type=checkbox],
+    input[type=radio] {
+        box-sizing: border-box;
+        padding: 0
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        height: auto
+    }
+
+    input[type=search] {
+        -webkit-appearance: textfield;
+        box-sizing: content-box
+    }
+
+    input[type=search]::-webkit-search-cancel-button,
+    input[type=search]::-webkit-search-decoration {
+        -webkit-appearance: none
+    }
+
+    fieldset {
+        border: 1px solid silver;
+        margin: 0 2px;
+        padding: .35em .625em .75em
+    }
+
+    legend {
+        border: 0;
+        padding: 0
+    }
+
+    textarea {
+        overflow: auto
+    }
+
+    optgroup {
+        font-weight: 700
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0
+    }
+
+    td,
+    th {
+        padding: 0
+    }
+
+    @font-face {
+        font-family: Roboto;
+        font-weight: 300;
+        font-style: normal;
+        src: url(../fonts/Roboto-300/Roboto-300.eot);
+        src: url(../fonts/Roboto-300/Roboto-300.eot?#iefix) format('embedded-opentype'), local('Roboto Light'), local('Roboto-300'), url(../fonts/Roboto-300/Roboto-300.woff2) format('woff2'), url(../fonts/Roboto-300/Roboto-300.woff) format('woff'), url(../fonts/Roboto-300/Roboto-300.ttf) format('truetype'), url(../fonts/Roboto-300/Roboto-300.svg#Roboto) format('svg')
+    }
+
+    @font-face {
+        font-family: Roboto;
+        font-weight: 700;
+        font-style: normal;
+        src: url(../fonts/Roboto-700/Roboto-700.eot);
+        src: url(../fonts/Roboto-700/Roboto-700.eot?#iefix) format('embedded-opentype'), local('Roboto Bold'), local('Roboto-700'), url(../fonts/Roboto-700/Roboto-700.woff2) format('woff2'), url(../fonts/Roboto-700/Roboto-700.woff) format('woff'), url(../fonts/Roboto-700/Roboto-700.ttf) format('truetype'), url(../fonts/Roboto-700/Roboto-700.svg#Roboto) format('svg')
+    }
+
+    @font-face {
+        font-family: Roboto;
+        font-weight: 300;
+        font-style: italic;
+        src: url(../fonts/Roboto-300italic/Roboto-300italic.eot);
+        src: url(../fonts/Roboto-300italic/Roboto-300italic.eot?#iefix) format('embedded-opentype'), local('Roboto Light Italic'), local('Roboto-300italic'), url(../fonts/Roboto-300italic/Roboto-300italic.woff2) format('woff2'), url(../fonts/Roboto-300italic/Roboto-300italic.woff) format('woff'), url(../fonts/Roboto-300italic/Roboto-300italic.ttf) format('truetype'), url(../fonts/Roboto-300italic/Roboto-300italic.svg#Roboto) format('svg')
+    }
+
+    @font-face {
+        font-family: Roboto;
+        font-weight: 700;
+        font-style: italic;
+        src: url(../fonts/Roboto-700italic/Roboto-700italic.eot);
+        src: url(../fonts/Roboto-700italic/Roboto-700italic.eot?#iefix) format('embedded-opentype'), local('Roboto Bold Italic'), local('Roboto-700italic'), url(../fonts/Roboto-700italic/Roboto-700italic.woff2) format('woff2'), url(../fonts/Roboto-700italic/Roboto-700italic.woff) format('woff'), url(../fonts/Roboto-700italic/Roboto-700italic.ttf) format('truetype'), url(../fonts/Roboto-700italic/Roboto-700italic.svg#Roboto) format('svg')
+    }
+
+    @font-face {
+        font-family: Roboto Mono;
+        font-weight: 300;
+        font-style: normal;
+        src: url(../fonts/Roboto-Mono-300/Roboto-Mono-300.eot);
+        src: url(../fonts/Roboto-Mono-300/Roboto-Mono-300.eot?#iefix) format('embedded-opentype'), local('Roboto Mono Light'), local('Roboto-Mono-300'), url(../fonts/Roboto-Mono-300/Roboto-Mono-300.woff2) format('woff2'), url(../fonts/Roboto-Mono-300/Roboto-Mono-300.woff) format('woff'), url(../fonts/Roboto-Mono-300/Roboto-Mono-300.ttf) format('truetype'), url(../fonts/Roboto-Mono-300/Roboto-Mono-300.svg#RobotoMono) format('svg')
+    }
+
+    @font-face {
+        font-family: Roboto Mono;
+        font-weight: 700;
+        font-style: normal;
+        src: url(../fonts/Roboto-Mono-700/Roboto-Mono-700.eot);
+        src: url(../fonts/Roboto-Mono-700/Roboto-Mono-700.eot?#iefix) format('embedded-opentype'), local('Roboto Mono Bold'), local('Roboto-Mono-700'), url(../fonts/Roboto-Mono-700/Roboto-Mono-700.woff2) format('woff2'), url(../fonts/Roboto-Mono-700/Roboto-Mono-700.woff) format('woff'), url(../fonts/Roboto-Mono-700/Roboto-Mono-700.ttf) format('truetype'), url(../fonts/Roboto-Mono-700/Roboto-Mono-700.svg#RobotoMono) format('svg')
+    }
+
+    body {
+        max-width: 21cm;
+        margin: auto;
+        line-height: 1.6;
+        font-weight: 300;
+        font-family: Roboto, sans-serif
+    }
+
+    header>h1 {
+        margin: 0;
+        font-size: 3em;
+        padding-top: 4em
+    }
+
+    div.banner {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between
+    }
+
+    div.banner>img {
+        height: 100%
+    }
+
+    div.banner>div.status {
+        color: #fff;
+        background: #9400bf;
+        width: 350px;
+        padding: 10px;
+        text-align: right
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        letter-spacing: .0375em
+    }
+
+    h1,
+    h2 {
+        color: #4b0061
+    }
+
+    h2 {
+        margin-top: 3em
+    }
+
+    h3 {
+        margin-top: 2.5em
+    }
+
+    h4 {
+        font-weight: 300;
+        font-size: 1.2em;
+        -webkit-font-feature-settings: "c2sc";
+        font-feature-settings: "c2sc";
+        font-variant: small-caps;
+        margin: 2em 0 .5em
+    }
+
+    [role=contentinfo] a {
+        text-decoration: none
+    }
+
+    [role=directory] ol,
+    ol[role=directory] {
+        list-style-type: none
+    }
+
+    [role=contentinfo] dt {
+        font-weight: 700
+    }
+
+    [role=contentinfo] dd {
+        margin-bottom: 1em
+    }
+
+    a.onto {
+        text-decoration: none;
+        background: linear-gradient(0deg, rgba(255, 0, 0, .4), rgba(255, 0, 0, .4) 15%, #fff 16%);
+        color: #434343
+    }
+
+    a.onto,
+    code,
+    pre {
+        font-family: Roboto Mono, monospace
+    }
+
+    p.issue {
+        border-left: 3px solid red;
+        padding: .5em 1em
+    }
+
+    @media screen and (max-width: 577px) {
+        div.status {
+            width: auto
+        }
+    }
+
+    @media screen and (max-width: 980px) {
+        body {
+            margin: 0 2em
+        }
+    }
+</style>
+
+<body prefix="schema: http://schema.org">
+    <header>
+        <div class="banner">
+            <img src="scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
+            <div class="status">Community Draft</div>
+        </div>
+        <h1>Scholarly HTML Toha</h1>
+    </header>
+    <div role="contentinfo">
+        <dl>
+            <dt>Authors</dt>
+            <dd>
+                Drăgoi George-Ştefan
+                &amp;
+                Creţu Alexandru-Cristian
+            </dd>
+        </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+        <h2>1. Abstract</h2>
+        <p>
+            This scolarly HTML document presents an analysis of the design and user experience aspects of a mobile and
+            smart watch app developed for organizing trips for tourist groups. The app incorporates features such as
+            augmented reality for points of interest and also navigation. The document will explore interaction design
+            patterns, user flows, affective factors and emotions within the app and also story boards diagrams with in
+            depth explanations.
+        </p>
+    </section>
+    <section id="introduction" role="doc-introduction">
+        <h2>2. Introduction</h2>
+        <p>
+            To the most of us, travel and exploration have become integral parts of our lives. For the needs of
+            travelers, we have developed the design for a mobile app that focuses on simplifying the organization for
+            groups of tourists, or for solo travelers, as the app contains a lot of features that do not require a
+            group. These features are organized in a user-friendly interface, that emphasize these innovative
+            functionalities that include augmented reality (AR) and point of interest navigation based on user photos of
+            current location.
+        </p>
+        <p>
+            The motivation behind the development of this app is the desire to adress the challenges faced by travelers
+            when organizing trips for groups. Existing solutions fail to provide an intuitive and egaging user
+            experience. Our app aims to narrow this gap by incorporating techonologies and effective interaction design
+            patterns. Some challenges faced by travelers are the possibilities of getting lost in specific areas where
+            some gps app does not give exact directions or it is hard to understand where to move. For this specific
+            problem there comes the AR feature incorporated in our app.
+        </p>
+        <p>
+            By examining these key areas and pain points of the users, we aim to contribute valuable insights to the
+            field of mobile travel applications.
+        </p>
+    </section>
+    <section id="structure">
+        <h2>3. Interaction Design Patterns</h2>
+        <h3>3.1 Scrollable Sections</h3>
+        <p>The home page of our app features three sections, two of them which are scrollable horizontally, each
+            presenting different sets of information (popular locations near the user's area, popular destinations and a
+            section that gives access to the tools of the app). This pattern allows users to navigate horizontally to
+            access more content, providing a visually engaging and efficient way to explore different categories of
+            information.</p>
+        <h3>3.2 Augmented Reality (AR)</h3>
+        <p>The AR feature enables uses to capture photos of points of interest, this resulting in the display of
+            relevant details about that POI. Also, this feature also allow the user to use the camera to highligh his
+            current
+            location and on the phone and then suggestions for the tracking of the desired point of interest will
+            appear, like arrows and distance remaining before the next turn.This pattern leverages the capabilities of
+            mobile devices to overlay digital information onto the real-world view, enhancing the user's understanding
+            and interaction with the physical environment.</p>
+        <h3>3.3 Mobile specific UI Patterns</h3>
+        <h4>Navigation</h4>
+        <p>For navigation, we thought that a bottom navigation menu bar would suit the app the best. The bottom
+            navigation has
+            suggestive icons for each of the desired action that is incorporated in the app, also, this type of
+            navigation is best suited for mobile apps because of the small distance of the thumb to the actual button
+            that the user wants to press.</p>
+        <h4>Layout</h4>
+        <p>For layout mostly we chose cards and grids. We chose cards to represent the locations we present in the home
+            page. Each card has information about the place with a relevant image and a rating provided by Google.</p>
+        <h4>Form patterns</h4>
+        <p>Regarding forms we use a placeholder for the search functionality of our app, located on the home page, to
+            suggest users to click on it and search for the desired visiting place. When a place is selected a multi
+            step form will be triggered, that basically creates the experience and the scedule for the group that the
+            specific user wants. In this form we used toggles, calendar picker, time picker and a text input for the
+            name of the activity.</p>
+
+    </section>
+    <section id="semantics">
+        <!-- review? -->
+        <h2>4. User Flows</h2>
+        <p>
+            Registration and Group Creation: Users would need to register or log in to the app, after which they can
+            create a group and invite friends to join.
+        </p>
+        <p>
+            Trip Organization: Once a group is created, the user can organize a trip to a specific location, including
+            selecting dates, setting preferences, and making necessary arrangements.
+        </p>
+        <p>
+            Point of View and Schedule Management: Users can then create a schedule for visiting specific points of view
+            or cities, assigning time slots, adding descriptions, and managing the itinerary for the trip.
+        </p>
+        </p>
+    </section>
+    <section>
+        <h2>5. Affective Factors and Emotion</h2>
+        <h3>5.1 Delight</h3>
+        <p>The app's interface and features should aim to evoke positive emotions and a sense of excitement as users
+            discover popular locations, explore destinations, and interact with augmented reality to gain information
+            and directions.</p>
+        <h3>5.2 Accomplishment</h3>
+        <p>
+            Completing trip schedules, successfully navigating to POIs, or receiving positive feedback from group
+            members give users a sense of achievement and progress.
+        </p>
+    </section>
+    <section>
+        <h2>6. Storyboards</h2>
+        <h3>6.1 First storyboad highlights the basic use of the app</h3>
+        <img src="./images/srtoryboard1-fist-column.png" alt="">
+        <img src="./images/storyboard1-second-column.png" alt="">
+        <h3>6.2 Second storyboad highlights the AR functionality</h3>
+        <img src="./images/storyboard2-first-column.png" alt="">
+        <img src="./images/storyboard2-second-column.png" alt="">
+    </section>
+    <section>
+        <h2>7. Userflow</h2>
+        <img src="./images/user-flow.jpg" alt="">
+    </section>
+    <section>
+        <h2>9. Sketch</h2>
+        <img src="./images/sketch.png" alt="" height="1000px">
+    </section>
+    <section id="acks" style="margin-bottom:40px">
+        <!-- review? -->
+        <h2>References</h2>
+        <a href="http://pxdotpt.com/hci">http://pxdotpt.com/hci</a>
+        <br>
+        <a href="https://www.storyboardthat.com/">https://www.storyboardthat.com/</a>
+        <br>
+        <a
+            href="https://profs.info.uaic.ro/~busaco/teach/courses/hci/hci-film.html#week8">https://profs.info.uaic.ro/~busaco/teach/courses/hci/hci-film.html#week8</a>
+    </section>
+</body>
+
+</html>
